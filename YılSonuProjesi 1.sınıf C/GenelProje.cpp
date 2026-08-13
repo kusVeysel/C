@@ -151,6 +151,6 @@ int main(int argc,char *argv[]) { // parametre olarak 1 0 1 0 giriniz
 	x1++; y1++;
 	}
 	printf("\n\nSaglicakla hoscakalin...\n");
-	free(hstblg);,
+	free(hstblg);
 	free(rndvblg);
 }
