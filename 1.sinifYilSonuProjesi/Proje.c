@@ -19,13 +19,14 @@ struct hastabilgi {
 	char tc[12]; 
 };
 
-void randevu(char kusur[11],struct randevubilgi *rndvblg,int y1) {
+void randevu(char kusur[11], struct randevubilgi *rndvblg, int y1) {
     
     const char *gecicidoktorlar[10] = {
         "Ahmet-Yilmaz", "Elif-Demir", "Mehmet-Kaya", "Zeynep-Celik", "Can-Ozturk",
         "Asli-Sahin", "Mustafa-Aydin", "Beyza-Yildiz", "Burak-Arslan", "Merve-Koc"
     };
-    for(int i = 0; i < 10; i++) {
+    int i;
+    for(i = 0; i < 10; i++) {
     rndvblg[y1].doktorlar[i] = gecicidoktorlar[i];
     }
     
@@ -94,7 +95,7 @@ void randevu(char kusur[11],struct randevubilgi *rndvblg,int y1) {
 	printf("Polikinlik: %d\n", rndvblg[y1].polikinlik);
 }
 
-void hastagiris(struct hastabilgi *hstblg,struct randevubilgi *rndvblg,int x1,int y1) {
+void hastagiris(struct hastabilgi *hstblg, struct randevubilgi *rndvblg, int x1, int y1) {
 	printf("\nIsim: ");
     scanf("%s", hstblg[x1].isim);
 	
@@ -119,9 +120,9 @@ void hastagiris(struct hastabilgi *hstblg,struct randevubilgi *rndvblg,int x1,in
 	randevu(hstblg[x1].kusur,rndvblg,y1);   
 }
 
-int main(int argc,char *argv[]) { // parametre olarak 1 0 1 0 giriniz
+int main(int argc, char *argv[]) { // parametre olarak 1 0 1 0 giriniz
 	srand(time(NULL));
-	char kayit[6]="evet";
+	char kayit[6] = "evet";
 	printf("Hastanemize hosgeldiniz, hasta kaydi icin asagida belirtilen bilgileri giriniz\n");
 	
 	int x = atoi(argv[1]);

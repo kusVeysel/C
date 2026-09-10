@@ -78,7 +78,7 @@ int kontrol(int sifre){
 
 main(){
 	int sonuc;
-	int (*durum[5])(int) = {kontrol,para,islem,iade,cikis};
+	int (*durum[5])(int) = {kontrol, para, islem, iade, cikis};
 	int sifre;
 printf("Sifrenizi giriniz: ");
 scanf("%d",&sifre);
@@ -93,7 +93,7 @@ durum[0](sifre);
 		cikis[4](sonuc);	
 	}
 	else{
-		while( bitir != 1){
+		while(bitir != 1){
 				printf("Mevcut bakiyeniz: %dTL\n",para);
 			para = durum[2](para);
 			int bitir = durum[3](sonuc);
