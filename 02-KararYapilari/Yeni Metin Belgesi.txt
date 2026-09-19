@@ -1,0 +1,38 @@
+    /*
+    ============================================================
+                            ÖZET
+    ============================================================
+
+    if
+        -> Bir koşulu kontrol eder.
+
+    else
+        -> if koşulu yanlışsa çalışır.
+
+    else if
+        -> Birden fazla koşulu kontrol eder.
+
+    switch
+        -> Belirli değerleri kontrol eder.
+
+    case
+        -> switch içerisindeki seçeneklerdir.
+
+    default
+        -> Hiçbir case eşleşmezse çalışır.
+
+    break
+        -> switch'ten çıkar.
+
+    && 
+        -> VE
+
+    ||
+        -> VEYA
+
+    !
+        -> DEĞİL
+
+    ? :
+        -> Kısa if-else yapısı.
+    */
