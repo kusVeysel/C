@@ -57,13 +57,10 @@ int main()
 
 
     // 1'den 10'a kadar sayýlarý yazdýrma
-    
     for (i = 1; i <= 10; i++)
     {
         printf("%d ", i);
     }
-
-
     printf("\n");
 
 
@@ -94,12 +91,10 @@ int main()
     // 1'den 5'e kadar sayýlarýn toplamýný buluyoruz.
 
     int toplam = 0;
-
     for (i = 1; i <= 5; i++)
     {
         toplam += i;
     }
-
     printf("Toplam: %d\n", toplam);
 
     /*
@@ -113,8 +108,7 @@ int main()
     i = 4 -> toplam = 10
     i = 5 -> toplam = 15
 
-    Sonuç:
-    15
+    Sonuç: 15
     */
 
 
@@ -123,8 +117,7 @@ int main()
                         ÝÇ ÝÇE FOR
     ============================================================
 
-    Bir for döngüsünün içerisinde baþka bir for döngüsü
-    kullanýlabilir.
+    Bir for döngüsünün içerisinde baþka bir for döngüsü kullanýlabilir.
 
     Buna nested loop (iç içe döngü) denir.
     */
@@ -161,9 +154,7 @@ int main()
 
 
     /*
-    ÇIKTI:
-
-    1 2 3 4
+    ÇIKTI: 1 2 3 4
 
     i = 5 olduðunda break çalýþýr ve döngü tamamen biter.
     */
@@ -187,9 +178,7 @@ int main()
     }
 
     /*
-    ÇIKTI:
-
-    1 2 4 5
+    ÇIKTI: 1 2 4 5
 
     i = 3 olduðunda continue çalýþýr. 3 yazdýrýlmaz ve sonraki tura geçilir.
     */

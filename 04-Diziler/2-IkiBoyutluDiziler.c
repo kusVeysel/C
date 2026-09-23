@@ -15,22 +15,13 @@ int main()
         4  5  6
         7  8  9
 
-    Burada:
-        3 satýr
-        3 sütun vardýr.
+    Burada: 3 satýr, 3 sütun vardýr.
 
-    Tanýmlama:
+    Tanýmlama: veri_tipi dizi[satýr][sütun];
 
-        veri_tipi dizi[satýr][sütun];
+    Örnek: int sayilar[3][3];
 
-    Örnek:
-
-        int sayilar[3][3];
-
-    Bu dizi:
-        3 satýr
-        3 sütun
-        toplam 9 eleman içerir.
+    Bu dizi: 3 satýr, 3 sütun, toplam 9 eleman içerir.
     */
 
 
@@ -48,9 +39,7 @@ int main()
                         ELEMANLARA ERÝÞME
     ============================================================
 
-    2 boyutlu dizilerde iki index kullanýlýr:
-
-        dizi[satýr][sütun]
+    2 boyutlu dizilerde iki index kullanýlýr: dizi[satýr][sütun]
 
     Indexler 0'dan baþlar.
 
@@ -79,8 +68,8 @@ int main()
 
     2 boyutlu dizilerde genellikle iç içe for döngüsü kullanýlýr.
 
-    Dýþ döngü    -> Satýrlarý gezer
-    Ýç döngü     -> Sütunlarý gezer
+    Dýþ döngü  -> Satýrlarý gezer
+    Ýç döngü   -> Sütunlarý gezer
     */
 
     printf("\nDizi:\n");
@@ -93,7 +82,7 @@ int main()
             printf("%d ", sayilar[i][j]);
         }
 
-        printf("\n"); // Bir satýr bittikten sonra alt satýra geç
+        printf("\n"); // Bir satýr bittikten sonra alt satýra geç.
     }
 
 
@@ -146,7 +135,6 @@ int main()
         {
             printf("%d ", matris[i][j]);
         }
-
         printf("\n");
     }
 

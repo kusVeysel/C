@@ -62,13 +62,9 @@ int main()
 
     Buradaki fark çok önemlidir.
 
-    while:
+    while: Koþulu ÖNCE kontrol eder. Koþul FALSE ise hiç çalýþmayabilir.
 
-        Koþulu ÖNCE kontrol eder. Koþul FALSE ise hiç çalýþmayabilir.
-
-    do-while:
-
-        Önce kodu çalýþtýrýr.  Koþulu SONRA kontrol eder. Bu yüzden en az 1 kez çalýþýr.
+    do-while: Önce kodu çalýþtýrýr.  Koþulu SONRA kontrol eder. Bu yüzden en az 1 kez çalýþýr.
     */
 
 
@@ -90,9 +86,7 @@ int main()
 
 
     /*
-    ÇIKTI:
-
-    do-while calisti
+    ÇIKTI: do-while calisti
 
     Çünkü:
 
@@ -234,9 +228,7 @@ int main()
 
 
     /*
-    ÇIKTI:
-
-    1 2 3 4
+    ÇIKTI: 1 2 3 4
 
     i = 5 olduðunda break çalýþýr ve döngü tamamen sona erer.
     */
@@ -264,30 +256,7 @@ int main()
     }
     while (i < 5);
 
-
-    /*
-    ÇIKTI:
-
-    1 2 4 5
-    */
-
-
-    /*
-    ============================================================
-                         ÖZET
-    ============================================================
-
-    for:
-
-        Tekrar sayýsý veya baþlangýç/bitiþ koþulu belli olduðunda sýk kullanýlýr.
-
-    while:
-
-        Önce koþulu kontrol eder. Koþul FALSE ise hiç çalýþmayabilir.
-
-    do-while:
-
-        Önce kodu çalýþtýrýr. Sonra koþulu kontrol eder. Bu nedenle en az 1 kez çalýþýr.
-    */
+    
+	// ÇIKTI: 1 2 4 5
 
 }

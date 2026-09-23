@@ -1,41 +1,44 @@
 #include <stdio.h>
 
-int main()
+main()
 {
     /*
     ============================================================
-                    1. KARÞILAÞTIRMA OPERATÖRLERÝ
+    1. KARÞILAÞTIRMA OPERATÖRLERÝ
     ============================================================
+    Bir deðeri baþka bir deðerle karþýlaþtýrmak için kullanýlýr.
 
-    Karar yapýlarýnda bir deðeri baþka bir deðerle karþýlaþtýrýrýz.
+    ==  -> Eþit mi?
+    !=  -> Eþit deðil mi?
+    >   -> Büyük mü?
+    <   -> Küçük mü?
+    >=  -> Büyük veya eþit mi?
+    <=  -> Küçük veya eþit mi?
 
-    ==   Eþit mi?
-    !=   Eþit deðil mi?
-    >    Büyük mü?
-    <    Küçük mü?
-    >=   Büyük veya eþit mi?
-    <=   Küçük veya eþit mi?
-
-    Karþýlaþtýrmanýn sonucu:
-
+    Karþýlaþtýrma sonucunda:
     1 -> Doðru (true)
     0 -> Yanlýþ (false)
-    */
+    !!! 0 DIÞINDA HER DEÐER TRUE'dur.
 
+    ÖNEMLÝ:
+    =  -> Atama yapar.
+    == -> Eþitlik karþýlaþtýrmasý yapar.
+
+    Örneðin:
+        sayi = 10;    // 10 deðerini sayi'ya ata
+        sayi == 10;   // sayi 10'a eþit mi?
+    */
 
     /*
     ============================================================
-                            2. if
+    2. if
     ============================================================
-
-    if:
-    "Eðer bu koþul doðruysa aþaðýdaki kodu çalýþtýr."
+    if: "Eðer bu koþul doðruysa aþaðýdaki kodu çalýþtýr."
 
     Yapýsý:
-
         if (koþul)
         {
-            // Koþul doðruysa çalýþacak kodlar
+            // Koþul doðruysa çalýþýr
         }
     */
 
@@ -46,16 +49,12 @@ int main()
         printf("18 yasindan buyuksun\n");
     }
 
-
     /*
     ============================================================
-                        3. if - else
+    3. if - else
     ============================================================
-
-    if  -> Koþul doðruysa
-    else -> Koþul yanlýþsa
-
-    Örneðin yaþ 18 veya üzerindeyse yetiþkin,deðilse çocuk olarak deðerlendirebiliriz.
+    if   -> Koþul doðruysa çalýþýr.
+    else -> Koþul yanlýþsa çalýþýr.
     */
 
     if (yas >= 18)
@@ -67,15 +66,13 @@ int main()
         printf("18 yasindan kucuk\n");
     }
 
-
     /*
     ============================================================
-                        4. else if
+    4. else if
     ============================================================
-
     Birden fazla koþulu kontrol etmek için kullanýlýr.
 
-    Program koþullarý yukarýdan aþaðýya kontrol eder.Ýlk doðru olan koþulun içerisindeki kod çalýþýr.
+    Koþullar yukarýdan aþaðýya kontrol edilir. Ýlk doðru koþulun kodlarý çalýþýr ve zincir sona erer.
     */
 
     int notu = 75;
@@ -101,10 +98,9 @@ int main()
         printf("Basarisiz\n");
     }
 
-
     /*
     ============================================================
-                    5. KARÞILAÞTIRMA ÖRNEÐÝ
+    5. KARÞILAÞTIRMA ÖRNEÐÝ
     ============================================================
     */
 
@@ -130,48 +126,56 @@ int main()
         printf("Sayi 20'den kucuk\n");
     }
 
-
     /*
     ============================================================
-                    6. MANTIKSAL OPERATÖRLER
+    6. MANTIKSAL OPERATÖRLER
     ============================================================
-
     Birden fazla koþulu birleþtirmek için kullanýlýr.
 
     && -> VE
     || -> VEYA
-    !  -> DEÐÝL
+    !  -> DEÐÝL / SONUCU TERSÝNE ÇEVÝRÝR
 
-    && kullanýldýðýnda bütün koþullarýn doðru olmasý gerekir.
+    &&: Bütün koþullarýn doðru olmasý gerekir.
 
-    || kullanýldýðýnda koþullardan en az birinin doðru olmasý yeterlidir.
+    ||: Koþullardan en az birinin doðru olmasý yeterlidir.
+
     */
 
     int yas2 = 20;
     int ehliyet = 1; // 1 -> Var, 0 -> Yok
 
-    // Ýki koþulun da doðru olmasý gerekiyor.
+    // Ýki koþulun da doðru olmasý gerekir.
     if (yas2 >= 18 && ehliyet == 1)
     {
         printf("Arac kullanabilirsiniz.\n");
     }
-    
-    // Koþullardan en az birinin doðru olmasý yeterli.
+
+    // Koþullardan en az birinin doðru olmasý yeterlidir.
     if (yas2 < 18 || ehliyet == 0)
     {
         printf("Arac kullanamazsiniz.\n");
     }
 
+    // ehliyet 1 deðilse çalýþýr.
+    if (ehliyet != 1)
+    {
+        printf("Ehliyet yok\n");
+    }
 
     /*
     ============================================================
-                            7. ! OPERATÖRÜ
+    7. ! OPERATÖRÜ
     ============================================================
-
-    ! bir koþulun sonucunu tersine çevirir.
+    ! operatörü bir koþulun veya mantýksal deðerin sonucunu tersine çevirir.
 
     true  -> false
     false -> true
+
+    Örneðin:
+        !1 -> 0
+        !0 -> 1
+
     */
 
     int ogrenciMi = 1;
@@ -185,13 +189,13 @@ int main()
         printf("Ogrenci\n");
     }
 
-
     /*
     ============================================================
-                        8. ÝÇ ÝÇE if
+    8. ÝÇ ÝÇE if
     ============================================================
-
     Bir if bloðunun içerisinde baþka bir if kullanýlabilir.
+
+    Buna iç içe if (nested if) denir.
     */
 
     int kullaniciYasi = 20;

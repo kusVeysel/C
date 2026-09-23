@@ -156,7 +156,7 @@ int main()
     /*
     Çalýþma mantýðý:
 
-    Kullanýcý 0 girmediði sürece: sayýyý yazdýr, yeni sayý iste
+    Kullanýcý 0 girmediði sürece: sayýyý yazdýr, yeni sayý iste.
 
     Kullanýcý 0 girdiðinde:  girilen != 0 þartý FALSE olur ve döngü sona erer.
     */
@@ -188,9 +188,7 @@ int main()
 
 
     /*
-    ÇIKTI:
-
-    1 2 3 4
+    ÇIKTI: 1 2 3 4
 
     i deðeri 5 olduðunda break çalýþýr ve while döngüsü tamamen sona erer.
     */
@@ -219,9 +217,7 @@ int main()
     }
 
     /*
-    ÇIKTI:
-
-    1 2 4 5
+    ÇIKTI: 1 2 4 5
 
     i = 3 olduðunda continue çalýþýr. 3 yazdýrýlmadan sonraki tura geçilir.
     */
