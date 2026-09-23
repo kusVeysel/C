@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+main()
 {
     /*
     ============================================================
@@ -9,17 +9,16 @@ int main()
 
     Dizi (array), ayný veri tipindeki birden fazla deðeri tek bir deðiþken adý altýnda saklamamýzý saðlar.
 
-    Örneðin 5 farklý öðrenci numarasý saklamak istiyorsak ayrý ayrý deðiþkenler oluþturmak yerine dizi kullanabiliriz.
-
-    Tek tek:
+    Örneðin:
 
         int ogrenci1 = 101;
         int ogrenci2 = 102;
         int ogrenci3 = 103;
 
-    Dizi ile: int ogrenciNo[3] = {101, 102, 103};
+    yerine: int ogrenciNo[3] = {101, 102, 103};
+    	kullanabiliriz.
 
-    Böylece birden fazla deðeri tek bir dizi içerisinde tutabiliriz.
+    C'de dizilerin indeksleri 0'dan baþlar.
     */
 
 
@@ -29,12 +28,7 @@ int main()
     ============================================================
 
     Genel yapý: veri_tipi dizi_adi[eleman_sayisi];
-
-    Örneðin: int sayilar[5];
-
-    5 adet int deðer saklayabilecek bir dizi oluþturur.
     */
-
 
     int sayilar[5];
 
@@ -44,17 +38,14 @@ int main()
                     2. DÝZÝYE DEÐER ATAMA
     ============================================================
 
-    Dizilerde elemanlara indeks numarasý ile ulaþýlýr.
+    5 elemanlý dizinin indeksleri:
 
-    ÖNEMLÝ: C'de dizilerin indeks numarasý 0'dan baþlar.
-
-        1. eleman -> indeks 0
-        2. eleman -> indeks 1
-        3. eleman -> indeks 2
-        4. eleman -> indeks 3
-        5. eleman -> indeks 4
+        0 -> 1. eleman
+        1 -> 2. eleman
+        2 -> 3. eleman
+        3 -> 4. eleman
+        4 -> 5. eleman
     */
-
 
     sayilar[0] = 10;
     sayilar[1] = 20;
@@ -80,13 +71,12 @@ int main()
     ============================================================
                     4. DÝZÝYÝ BAÞLANGIÇTA DOLDURMA
     ============================================================
-
-    Diziyi oluþtururken doðrudan deðer verebiliriz.
     */
 
     int notlar[5] = {70, 80, 90, 85, 95};
 
     printf("\nNotlar:\n");
+
     printf("%d\n", notlar[0]);
     printf("%d\n", notlar[1]);
     printf("%d\n", notlar[2]);
@@ -96,10 +86,8 @@ int main()
 
     /*
     ============================================================
-                    5. ELEMAN SAYISINI BELÝRTMEME
+                    5. BOYUTU BELÝRTMEME
     ============================================================
-
-    Eleman sayýsýný doðrudan yazmak zorunda deðiliz.
 
     C, verdiðimiz deðerlerin sayýsýna göre dizinin boyutunu belirleyebilir.
     */
@@ -116,29 +104,23 @@ int main()
                     6. DÝZÝ VE FOR DÖNGÜSÜ
     ============================================================
 
-    Dizinin elemanlarýný tek tek yazmak yerine döngü kullanabiliriz.
-
-    Bu, dizilerle çalýþýrken en sýk kullanýlan yapýlardan biridir.
+    Dizinin elemanlarýný döngü ile tek tek okuyabiliriz.
     */
 
     int sayilar2[] = {10, 20, 30, 40, 50};
-	int i;
+    int i;
+
     for (i = 0; i < 5; i++)
     {
         printf("%d\n", sayilar2[i]);
     }
 
-
     /*
-    Burada:
-
-        i = 0 -> sayilar2[0]
-        i = 1 -> sayilar2[1]
-        i = 2 -> sayilar2[2]
-        i = 3 -> sayilar2[3]
-        i = 4 -> sayilar2[4]
-
-    þeklinde dizinin tüm elemanlarýna ulaþýyoruz.
+    i = 0 -> sayilar2[0]
+    i = 1 -> sayilar2[1]
+    i = 2 -> sayilar2[2]
+    i = 3 -> sayilar2[3]
+    i = 4 -> sayilar2[4]
     */
 
 
@@ -150,7 +132,6 @@ int main()
 
     int yaslar[3] = {18, 20, 25};
 
-    // 2. elemanýn deðerini deðiþtiriyoruz.
     // 2. elemanýn indeksi 1'dir.
     yaslar[1] = 21;
 
@@ -166,25 +147,26 @@ int main()
     ============================================================
                     8. KULLANICIDAN DÝZÝ DOLDURMA
     ============================================================
-
-    Kullanýcýdan aldýðýmýz deðerleri doðrudan dizinin elemanlarýna kaydedebiliriz.
     */
 
     int sayilar3[5];
 
     printf("\n5 adet sayi giriniz:\n");
+
     for (i = 0; i < 5; i++)
     {
         printf("%d. sayi: ", i + 1);
-
         scanf("%d", &sayilar3[i]);
     }
 
     printf("\nGirilen sayilar:\n");
+
     for (i = 0; i < 5; i++)
     {
         printf("%d ", sayilar3[i]);
     }
+
+    printf("\n");
 
 
     /*
@@ -194,7 +176,6 @@ int main()
     */
 
     int toplam = 0;
-
     int sayilar4[5] = {10, 20, 30, 40, 50};
 
     for (i = 0; i < 5; i++)
@@ -202,7 +183,7 @@ int main()
         toplam += sayilar4[i];
     }
 
-    printf("\n\nDizinin toplami: %d\n", toplam);
+    printf("\nDizinin toplami: %d\n", toplam);
 
 
     /*
@@ -212,13 +193,15 @@ int main()
     */
 
     int notlar2[5] = {70, 80, 90, 60, 100};
-
     int toplamNot = 0;
 
     for (i = 0; i < 5; i++)
     {
         toplamNot += notlar2[i];
     }
+
+    // (float) -> tür dönüþümü
+    // Böylece ondalýklý bölme yapýlýr.
     float ortalama = (float)toplamNot / 5;
 
     printf("Not ortalamasi: %.2f\n", ortalama);
@@ -241,6 +224,7 @@ int main()
             enBuyuk = sayilar5[i];
         }
     }
+
     printf("En buyuk sayi: %d\n", enBuyuk);
 
 
@@ -261,6 +245,7 @@ int main()
             enKucuk = sayilar6[i];
         }
     }
+
     printf("En kucuk sayi: %d\n", enKucuk);
 
 
@@ -269,13 +254,15 @@ int main()
                     13. DÝZÝ BOYUTU - sizeof
     ============================================================
 
-    sizeof() dizinin bellekte kapladýðý toplam byte miktarýný verir.
+    sizeof() bellekte kaplanan byte miktarýný verir.
 
-    Örneðin int çoðu sistemde 4 byte ise: int sayilar[5];
+    Örneðin: int sayilar[5];
 
-    toplam: 5 * 4 = 20 byte yer kaplar.
+    Dizinin toplam boyutu: sizeof(sayilar)
 
-    Eleman sayýsýný bulmak için: sizeof(dizi) / sizeof(dizi[0]) kullanýlabilir.
+    Bir elemanýn boyutu: sizeof(sayilar[0])
+
+    Eleman sayýsý: sizeof(sayilar) / sizeof(sayilar[0])
     */
 
     int sayilar7[] = {10, 20, 30, 40, 50};
@@ -284,16 +271,18 @@ int main()
 
     printf("\nDizinin eleman sayisi: %d\n", elemanSayisi);
 
+    // int'in kaç byte olduðunu sistemden öðrenebiliriz.
+    printf("int boyutu: %zu byte\n", sizeof(int));
+
 
     /*
     ============================================================
                     14. CHAR DÝZÝSÝNE GÝRÝÞ
     ============================================================
 
-    char dizileri karakterleri saklamak için kullanýlabilir.
+    char dizileri karakterleri saklayabilir.
 
-    Örneðin: char harfler[5] = {'A', 'B', 'C', 'D', 'E'}; 
-		Burada her eleman bir char deðeridir.
+    Her eleman ayrý bir char deðeridir.
     */
 
     char harfler[5] = {'A', 'B', 'C', 'D', 'E'};
@@ -305,13 +294,15 @@ int main()
         printf("%c ", harfler[i]);
     }
 
+    printf("\n");
+
 
     /*
     ============================================================
-                    ÖNEMLÝ NOT
+                         ÖNEMLÝ NOT
     ============================================================
 
-    Dizi boyutu 5 ise geçerli indeksler:
+    int sayilar[5] için geçerli indeksler:
 
         0
         1
@@ -319,15 +310,14 @@ int main()
         3
         4
 
-    5. indeks YOKTUR.
-
-    Örneðin: int sayilar[5];
-
-    için:
-        sayilar[4]  -> DOÐRU
-        sayilar[5]  -> HATALI
+    sayilar[4] -> DOÐRU
+    sayilar[5] -> HATALI
 
     Dizinin sýnýrlarý dýþýna çýkmak beklenmeyen sonuçlara ve ciddi hatalara neden olabilir.
-    */
 
+    DÝKKAT: int sayilar[5];
+    	ifadesindeki 5, eleman sayýsýný belirtir.
+
+    En son indeks ise: 5 - 1 = 4 olur.
+    */
 }

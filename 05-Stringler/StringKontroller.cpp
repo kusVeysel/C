@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h> // toupper için
+#include <ctype.h> // toupper & tolower için
 
-main() {
-    char c1[20] = "veysel";
-    char c2[10] = "ilayda";
-    char c3[15];
+main()
+{
+    char c1[30] = "veysel";
+    char c2[30] = "ahmet";
+    char c3[30];
     char c4 = 'a';
     char *p1, *p2, *p3, *p4, *p5;
 
@@ -13,95 +14,146 @@ main() {
     //                      METÝN ARAMA
     // ============================================================
 
-    // strstr: String içinde string arar, eþleþtiði yerden itibaren kalan metni döner
+    // strstr: String içinde baþka bir string arar.Bulursa eþleþen yerin adresini döndürür.
     p1 = strstr(c1, "ey");
     printf("strstr => %s\n", p1);
 
-    // strchr: String içinde karakteri baþtan arar, bulduðu yerden itibaren kalan metni döner
+    // strchr: String içinde karakteri baþtan arar.Bulduðu karakterin adresini döndürür.
     p2 = strchr(c1, 'e');
     printf("strchr => %s\n", p2);
 
-    // strrchr: String içinde karakteri sondan baþlayarak arar, bulduðu yerden itibaren kalan metni döner
+    // strrchr: Karakteri sondan baþlayarak arar.Bulduðu karakterin adresini döndürür.
     p3 = strrchr(c1, 'e');
     printf("strrchr => %s\n", p3);
 
-    // strpbrk: Ýkinci parametredeki karakterlerden herhangi birini ilk bulduðu yerden itibaren kalan metni döner
+    // strpbrk: Ýkinci stringdeki karakterlerden herhangi birini arar.Ýlk bulduðu karakterin adresini döndürür.
     p4 = strpbrk(c1, "abcvde");
     printf("strpbrk => %s\n", p4);
-
 
     // ============================================================
     //                  KARAKTER KÜMESÝ VE UZUNLUK
     // ============================================================
 
-    // strspn: c1'in baþýndan itibaren belirtilen karakter kümesine uyan karakter sayýsýný döner
+    // strspn: Stringin baþýndan itibaren verilen karakter kümesinde bulunan karakterlerin sayýsýný döndürür.
     int a = strspn(c1, "abcev");
     printf("strspn => %d\n", a);
 
-    // strcspn: c1'in baþýndan itibaren belirtilen karakterlerden biriyle karþýlaþana kadar geçen karakter sayýsýný döner
+    // strcspn: Verilen karakterlerden biriyle karþýlaþana kadar baþtan kaç karakter olduðunu döndürür.
     int b = strcspn(c1, "abcsa");
     printf("strcspn => %d\n", b);
 
-    // strlen: String'in karakter uzunluðunu döner
-    printf("strlen => %d\n", (int)strlen(c1));
-
+    // strlen: Stringin uzunluðunu döndürür. '\0' karakterini saymaz.
+    printf("strlen => %zu\n", strlen(c1));
 
     // ============================================================
-    //                KARAKTER VE METÝN DÖNÜÞTÜRME
+    //                KARAKTER DÖNÜÞTÜRME
     // ============================================================
 
-    // toupper: Tek bir karakteri büyük harfe dönüþtürür
+    // toupper: Karakteri büyük harfe dönüþtürür.
     printf("toupper => %c\n", toupper(c4));
 
-    // tolower: Tek bir karakteri küçük harfe dönüþtürür
+    // tolower: Karakteri küçük harfe dönüþtürür.
     printf("tolower => %c\n", tolower(c4));
 
-    // strupr: Tüm string'i büyük harfe dönüþtürür (Standart dýþýdýr, bazý derleyicilerde çalýþýr)
-    printf("strupr => %s\n", strupr(c1));
+    /*
+    strupr ve strlwr standart C fonksiyonlarý deðildir.Bu yüzden farklý derleyicilerde çalýþmayabilir.
 
-    // strlwr: Tüm string'i küçük harfe dönüþtürür (Standart dýþýdýr, bazý derleyicilerde çalýþýr)
-    printf("strlwr => %s\n", strlwr(c1));
+    Bunun yerine kendi döngümüzle stringi dönüþtürebiliriz.
+    */
 
+    // Stringi büyük harfe dönüþtürme
+    for (int i = 0; c1[i] != '\0'; i++)
+    {
+        c1[i] = toupper((unsigned char)c1[i]);
+    }
+
+    printf("Buyuk harf => %s\n", c1);
+
+    // Stringi tekrar küçük harfe dönüþtürme
+    for (int i = 0; c1[i] != '\0'; i++)
+    {
+        c1[i] = tolower((unsigned char)c1[i]);
+    }
+
+    printf("Kucuk harf => %s\n", c1);
 
     // ============================================================
     //                    METÝN KARÞILAÞTIRMA
     // ============================================================
 
-    // strcmpi: Ýki string'i büyük/küçük harf duyarsýz karþýlaþtýrýr (ASCII deðerine göre).
-    printf("strcmpi => %d\n", strcmpi(c1, c2));
+    /*
+    strcmp: Ýki stringi karþýlaþtýrýr.
 
-    // strcmp: Ýki string'i büyük/küçük harf duyarlý karþýlaþtýrýr (ASCII deðerine göre).
+        0  -> stringler ayný
+        <0 -> ilk string alfabetik olarak daha küçük
+        >0 -> ilk string alfabetik olarak daha büyük
+    */
+
     printf("strcmp => %d\n", strcmp(c1, c2));
 
+    /*
+    strcmpi standart C deðildir.
+    Büyük/küçük harf duyarsýz karþýlaþtýrma için iki stringi ayný harf durumuna getirip strcmp kullanabiliriz.
+    */
 
     // ============================================================
     //                    ELEMAN DEÐÝÞTÝRME
     // ============================================================
 
-    // strncpy: c1'den c3'e n kadar karakter kopyalar.
-    printf("strncpy => %s\n", strncpy(c3, c1, 4));
+    /*
+    strncpy: c1'in ilk 4 karakterini c3'e kopyalar.
 
-    // strcpy: c1'i c3'e tamamen kopyalar.
-    printf("strcpy => %s\n", strcpy(c3, c1));
+    DÝKKAT: strncpy her zaman '\0' eklemez. Bu nedenle elle ekliyoruz.
+    */
 
-    // strcat: c2 metnini c1'in sonuna ekler.
-    printf("strcat => %s\n", strcat(c1, c2));
+    strncpy(c3, c1, 4);
+    c3[4] = '\0';
 
-    // strncat: c2 metninin ilk n karakterini c1'in sonuna ekler.
-    printf("strncat => %s\n", strncat(c1, c2, 3));
+    printf("strncpy => %s\n", c3);
 
+    // strcpy: c1'in tamamýný c3'e kopyalar.
+    strcpy(c3, c1);
+    printf("strcpy => %s\n", c3);
+
+    /*
+    strcat: c2'yi c1'in sonuna ekler.
+
+    c1'in yeterli boþ alaný olmasý gerekir.
+    */
+
+    strcat(c1, c2);
+    printf("strcat => %s\n", c1);
+
+    /*
+    strncat: c2'nin ilk 3 karakterini c1'in sonuna ekler.
+
+    c1'in yeterli kapasitesi olmalýdýr.
+    */
+
+    strncat(c1, c2, 3);
+    printf("strncat => %s\n", c1);
 
     // ============================================================
     //                      METÝN PARÇALAMA
     // ============================================================
 
-    // strtok: String'i belirtilen ayýrýcý karakterlere ("l") göre parçalara böler.
+    /*
+    strtok: Stringi belirtilen ayýrýcý karakterlere göre parçalar.
+
+        Örneðin "ahmetveli" stringini "l" karakterinden ayýrýrsak:
+            ahmetve
+            i
+    */
+
     printf("strtok => ");
+
     p5 = strtok(c1, "l");
-    while (p5 != NULL) {
+
+    while (p5 != NULL)
+    {
         printf("%s ", p5);
         p5 = strtok(NULL, "l");
     }
-    printf("\n");
 
+    printf("\n");
 }

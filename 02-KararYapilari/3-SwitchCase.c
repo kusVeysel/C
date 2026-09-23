@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-main(){
-	
+main()
+{
     /*
     ============================================================
-                        	switch
+                            SWITCH
     ============================================================
 
     Bir deðiþkenin belirli deðerlerden hangisine eþit olduðunu kontrol etmek için kullanýlýr.
@@ -14,20 +14,22 @@ main(){
         switch (deger)
         {
             case 1:
-                // ...
+                // yapýlacak iþlem
                 break;
 
             case 2:
-                // ...
+                // yapýlacak iþlem
                 break;
 
             default:
-                // Hiçbir case eþleþmezse
+                // Hiçbir case eþleþmezse çalýþýr.
         }
 
-    break: switch bloðundan çýkýlmasýný saðlar.break olmazasa þartý saðlayan case'den sonraki diðer caseler de çalýþýr. Dongulerde tekrar anlatýlmaktadýr.
+    break: Ýçinde bulunduðu switch bloðundan çýkar. Döngülerde tekrar göreceðiz.
 
-    default: Hiçbir case eþleþmediðinde çalýþýr.
+    break yazýlmazsa eþleþen case'den sonraki case'ler de çalýþmaya devam edebilir. Buna "fall-through" denir.
+
+    default: Hiçbir case eþleþmezse çalýþýr.
     */
 
     int secim = 2;
@@ -51,11 +53,14 @@ main(){
             break;
     }
 
-
     /*
     ============================================================
-                    	switch ÝLE NOT SÝSTEMÝ
+                       SWITCH ÝLE NOT SÝSTEMÝ
     ============================================================
+
+    char karakterlerle çalýþabildiði için harf notlarýnda switch kullanabiliriz.
+
+    'A', 'B', 'C' gibi karakterler tek týrnak içinde yazýlýr.
     */
 
     char harfNotu = 'B';

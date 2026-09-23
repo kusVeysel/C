@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+main()
 {
     /*
     ============================================================
@@ -9,7 +9,7 @@ int main()
 
     Bir iþlemi belirli bir þart saðlandýðý sürece tekrar tekrar çalýþtýrmak için döngüler kullanýlýr.
 
-    for döngüsünün genel yapýsý:
+    Genel yapý:
 
         for (baþlangýç; koþul; deðiþim)
         {
@@ -22,21 +22,26 @@ int main()
 
     Burada:
 
-        int i = 0 -> Döngünün baþlangýç deðeri
+        int i = 0 -> Baþlangýç deðeri
+        i < 5     -> Döngünün devam etme þartý
+        i++       -> Her tur sonunda i'yi 1 artýrýr
 
-        i < 5 -> Döngünün devam etme þartý
+    Çalýþma sýrasý:
 
-        i++ -> Her turdan sonra i deðerini 1 artýr
+        1. Baþlangýç
+        2. Koþul kontrolü
+        3. Döngü gövdesi
+        4. Deðiþim
+        5. Tekrar koþul kontrolü
     */
 
+    int i;
 
     // 0'dan 4'e kadar sayýlarý yazdýrýr.
-    int i;
     for (i = 0; i < 5; i++)
     {
         printf("%d\n", i);
     }
-
 
     /*
     ÇIKTI:
@@ -47,40 +52,36 @@ int main()
     3
     4
 
-    i = 0  ->  0 < 5  -> çalýþýr
-    i = 1  ->  1 < 5  -> çalýþýr
-    i = 2  ->  2 < 5  -> çalýþýr
-    i = 3  ->  3 < 5  -> çalýþýr
-    i = 4  ->  4 < 5  -> çalýþýr
-    i = 5  ->  5 < 5  -> FALSE -> döngü biter
+    i = 0 ->  0 < 5  ->  çalýþýr
+    i = 1 ->  1 < 5  ->  çalýþýr
+    i = 2 ->  2 < 5  ->  çalýþýr
+    i = 3 ->  3 < 5  ->  çalýþýr
+    i = 4 ->  4 < 5  ->  çalýþýr
+    i = 5 ->  5 < 5  ->  false -> döngü biter
     */
 
-
-    // 1'den 10'a kadar sayýlarý yazdýrma
+    // 1'den 10'a kadar sayýlarý yazdýrýr.
     for (i = 1; i <= 10; i++)
     {
         printf("%d ", i);
     }
     printf("\n");
 
-
-    // 10'dan 1'e doðru geri sayma
-    // i-- -> i deðerini 1 azaltýr.
+    // 10'dan 1'e doðru geri sayar.
+    // i-- -> i deðerini 1 azaltýr. i -= 1 veya i = i - 1 ile ayný iþlevdedir. 
     for (i = 10; i >= 1; i--)
     {
         printf("%d ", i);
     }
     printf("\n");
 
-
-    // 2'þer 2'þer artýrma
-    // i += 2 -> her turda i deðerine 2 ekler.
+    // 2'þer 2'þer artýrýr.
+    // i += 2 -> i deðerine her turda 2 ekler.
     for (i = 0; i <= 10; i += 2)
     {
         printf("%d ", i);
     }
     printf("\n");
-
 
     /*
     ============================================================
@@ -88,13 +89,14 @@ int main()
     ============================================================
     */
 
-    // 1'den 5'e kadar sayýlarýn toplamýný buluyoruz.
-
+    // 1'den 5'e kadar sayýlarýn toplamýný bulur.
     int toplam = 0;
+
     for (i = 1; i <= 5; i++)
     {
-        toplam += i;
+        toplam += i; // toplam = toplam + i;
     }
+
     printf("Toplam: %d\n", toplam);
 
     /*
@@ -107,8 +109,6 @@ int main()
     i = 3 -> toplam = 6
     i = 4 -> toplam = 10
     i = 5 -> toplam = 15
-
-    Sonuç: 15
     */
 
 
@@ -121,7 +121,9 @@ int main()
 
     Buna nested loop (iç içe döngü) denir.
     */
-	int j;
+
+    int j;
+
     for (i = 1; i <= 3; i++)
     {
         for (j = 1; j <= 3; j++)
@@ -130,15 +132,23 @@ int main()
         }
     }
 
+    /*
+    Dýþ döngünün her turunda iç döngü baþtan sona çalýþýr.
+
+    i = 1 -> j = 1, 2, 3
+    i = 2 -> j = 1, 2, 3
+    i = 3 -> j = 1, 2, 3
+    */
+
 
     /*
     ============================================================
-                        break
+                            break
     ============================================================
 
-    break döngüyü tamamen sonlandýrýr.
+    break bulunduðu döngüyü tamamen sonlandýrýr.
 
-    Þart saðlanmasa bile break çalýþtýðý anda döngüden çýkýlýr.
+    break çalýþtýðý anda döngünün koþulunun tekrar kontrol edilmesini beklemeden döngüden çýkýlýr.
     */
 
     for (i = 1; i <= 10; i++)
@@ -147,25 +157,27 @@ int main()
         {
             break;
         }
+
         printf("%d ", i);
     }
 
     printf("\n");
 
-
     /*
     ÇIKTI: 1 2 3 4
 
-    i = 5 olduðunda break çalýþýr ve döngü tamamen biter.
+    i = 5 olduðunda break çalýþýr ve döngü tamamen sona erer.
     */
 
 
     /*
     ============================================================
-                        continue
+                          continue
     ============================================================
 
-    continue o turdaki iþlemi atlar ve döngünün bir sonraki turuna geçer. Döngüyü 1 kereye mahsus kýrar.
+    continue, o turdaki kalan kodlarý atlar ve bir sonraki iterasyona geçer.
+
+    for döngüsünde continue çalýþtýðýnda deðiþim kýsmý (örneðin i++) yine çalýþýr.
     */
 
     for (i = 1; i <= 5; i++)
@@ -174,13 +186,17 @@ int main()
         {
             continue;
         }
+
         printf("%d ", i);
     }
+
+    printf("\n");
 
     /*
     ÇIKTI: 1 2 4 5
 
-    i = 3 olduðunda continue çalýþýr. 3 yazdýrýlmaz ve sonraki tura geçilir.
-    */
+    i = 3 olduðunda continue çalýþýr.
 
+    printf çalýþtýrýlmaz. Sonra for döngüsündeki i++ çalýþýr. i = 4 olur ve döngü devam eder.
+    */
 }

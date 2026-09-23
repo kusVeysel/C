@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+main()
 {
     /*
     ============================================================
@@ -16,11 +16,10 @@ int main()
             // Tekrarlanacak kodlar
         }
 
-    for döngüsünden farklý olarak baþlangýç ve deðiþim kýsmý while'ýn parantezinde bulunmaz.
+    for döngüsünden farklý olarak baþlangýç ve deðiþim kýsmý while parantezinin içinde bulunmaz.
 
-    Bu iþlemleri kendimiz döngünün dýþýnda veya içerisinde yaparýz.
+    Bu iþlemleri kendimiz yaparýz.
     */
-
 
     /*
     ============================================================
@@ -36,7 +35,6 @@ int main()
         i++;
     }
 
-
     /*
     ÇIKTI:
 
@@ -45,6 +43,7 @@ int main()
     2
     3
     4
+    */
 
 
     /*
@@ -60,6 +59,7 @@ int main()
         printf("%d ", i);
         i++;
     }
+
     printf("\n");
 
 
@@ -76,6 +76,7 @@ int main()
         printf("%d ", i);
         i--;
     }
+
     printf("\n");
 
 
@@ -92,6 +93,7 @@ int main()
         printf("%d ", i);
         i += 2;
     }
+
     printf("\n");
 
 
@@ -106,11 +108,11 @@ int main()
 
     while (sayi <= 5)
     {
-        toplam += sayi;
+        toplam += sayi; // toplam = toplam + sayi;
         sayi++;
     }
-    printf("Toplam: %d\n", toplam);
 
+    printf("Toplam: %d\n", toplam);
 
     /*
     Hesaplama:
@@ -123,7 +125,7 @@ int main()
     sayi = 4 -> toplam = 10
     sayi = 5 -> toplam = 15
 
-    Sonuç: Toplam: 15
+    Sonuç: 15
     */
 
 
@@ -140,7 +142,6 @@ int main()
     int girilen;
 
     printf("0 girerek programi bitirebilirsiniz.\n");
-
     printf("Bir sayi girin: ");
     scanf("%d", &girilen);
 
@@ -150,15 +151,21 @@ int main()
         printf("Tekrar bir sayi girin: ");
         scanf("%d", &girilen);
     }
+
     printf("Program sonlandi.\n");
 
-
     /*
-    Çalýþma mantýðý:
+    Kullanýcý 0 girmediði sürece:
 
-    Kullanýcý 0 girmediði sürece: sayýyý yazdýr, yeni sayý iste.
+        1. Sayýyý yazdýr.
+        2. Yeni sayý iste.
+        3. Yeni sayýyý kontrol et.
 
-    Kullanýcý 0 girdiðinde:  girilen != 0 þartý FALSE olur ve döngü sona erer.
+    Kullanýcý 0 girerse:
+
+        girilen != 0
+
+    þartý FALSE olur ve döngü sona erer.
     */
 
 
@@ -167,7 +174,7 @@ int main()
                          7. BREAK
     ============================================================
 
-    break döngüyü tamamen sonlandýrýr.
+    break bulunduðu döngüyü tamamen sonlandýrýr.
     */
 
     i = 1;
@@ -180,17 +187,17 @@ int main()
         }
 
         printf("%d ", i);
-
         i++;
     }
 
     printf("\n");
 
-
     /*
-    ÇIKTI: 1 2 3 4
+    ÇIKTI:
 
-    i deðeri 5 olduðunda break çalýþýr ve while döngüsü tamamen sona erer.
+    1 2 3 4
+
+    i = 5 olduðunda break çalýþýr ve while döngüsü tamamen sona erer.
     */
 
 
@@ -199,7 +206,7 @@ int main()
                        8. CONTINUE
     ============================================================
 
-    continue mevcut turdaki iþlemi atlar ve sonraki tura geçer.
+    continue mevcut turdaki kalan kodlarý atlar ve sonraki tura geçer.
     */
 
     i = 0;
@@ -216,10 +223,16 @@ int main()
         printf("%d ", i);
     }
 
-    /*
-    ÇIKTI: 1 2 4 5
+    printf("\n");
 
-    i = 3 olduðunda continue çalýþýr. 3 yazdýrýlmadan sonraki tura geçilir.
+    /*
+    ÇIKTI:
+
+    1 2 4 5
+
+    i = 3 olduðunda continue çalýþýr.
+
+    printf çalýþtýrýlmaz ve sonraki tura geçilir.
     */
 
 
@@ -239,7 +252,7 @@ int main()
             printf("%d", i);
         }
 
-    Burada i hiç artýrýlmadýðý için: i = 0 olarak kalýr.
+    Burada i hiç artýrýlmadýðý için i = 0 olarak kalýr.
 
     0 < 5 sürekli TRUE olacaðý için döngü bitmez.
 
@@ -250,9 +263,7 @@ int main()
         while (i < 5)
         {
             printf("%d", i);
-
             i++;
         }
     */
-
 }

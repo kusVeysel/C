@@ -1,17 +1,17 @@
 #include <stdio.h>
 
-int main()
+main()
 {
     /*
     ============================================================
                         DO-WHILE DÖNGÜSÜ
     ============================================================
 
-    do-while döngüsü, while döngüsüne benzer.
+    do-while, while döngüsüne benzer.
 
-    Fakat önemli bir farký vardýr: do-while içerisindeki kod KOÞUL KONTROL EDÝLMEDEN ÖNCE 1 KEZ ÇALIÞIR.
+    Önemli fark: do-while içerisindeki kod, koþul kontrol edilmeden önce MUTLAKA 1 KEZ çalýþýr.
 
-    Genel yapýsý:
+    Genel yapý:
 
         do
         {
@@ -19,12 +19,14 @@ int main()
         }
         while (koþul);
 
-    Yani:
+    Çalýþma sýrasý:
 
-        1. Önce do içerisindeki kod çalýþýr.
-        2. Sonra koþul kontrol edilir.
-        3. Koþul TRUE ise tekrar çalýþýr.
+        1. do içerisindeki kod çalýþýr.
+        2. Koþul kontrol edilir.
+        3. TRUE ise tekrar çalýþýr.
         4. FALSE ise döngü biter.
+
+    Dikkat: while (koþul); satýrýnýn sonunda ; bulunur.
     */
 
 
@@ -43,7 +45,6 @@ int main()
     }
     while (i < 5);
 
-
     /*
     ÇIKTI:
 
@@ -60,13 +61,15 @@ int main()
                     2. WHILE ÝLE FARKI
     ============================================================
 
-    Buradaki fark çok önemlidir.
+    while:
+        Önce koþulu kontrol eder.
+        FALSE ise hiç çalýþmayabilir.
 
-    while: Koþulu ÖNCE kontrol eder. Koþul FALSE ise hiç çalýþmayabilir.
-
-    do-while: Önce kodu çalýþtýrýr.  Koþulu SONRA kontrol eder. Bu yüzden en az 1 kez çalýþýr.
+    do-while:
+        Önce kodu çalýþtýrýr.
+        Sonra koþulu kontrol eder.
+        Bu nedenle en az 1 kez çalýþýr.
     */
-
 
     int sayi = 10;
 
@@ -74,7 +77,6 @@ int main()
     {
         printf("while calisti\n");
     }
-
 
     sayi = 10;
 
@@ -84,17 +86,17 @@ int main()
     }
     while (sayi < 5);
 
-
     /*
-    ÇIKTI: do-while calisti
+    ÇIKTI:
+
+    do-while calisti
 
     Çünkü:
 
         sayi = 10
-
         10 < 5 -> FALSE
 
-    olmasýna raðmen do-while içerisindeki kod koþul kontrol edilmeden önce 1 kez çalýþtý.
+    Buna raðmen do-while içerisindeki kod önce çalýþýr.
     */
 
 
@@ -112,6 +114,7 @@ int main()
         i++;
     }
     while (i <= 10);
+
     printf("\n");
 
 
@@ -129,6 +132,7 @@ int main()
         i--;
     }
     while (i >= 1);
+
     printf("\n");
 
 
@@ -137,9 +141,7 @@ int main()
                     5. KULLANICIDAN VERÝ ALMA
     ============================================================
 
-    do-while özellikle kullanýcýdan veri alýnan iþlemlerde oldukça kullanýþlýdýr.
-
-    Çünkü kullanýcýnýn en az 1 kez iþlem yapmasýný saðlayabiliriz.
+    do-while kullanýcýdan en az 1 kez veri alýnmasý gereken durumlarda kullanýþlýdýr.
     */
 
     int girilen;
@@ -148,10 +150,11 @@ int main()
     {
         printf("Bir sayi girin (0 = cikis): ");
         scanf("%d", &girilen);
-        printf("Girdiginiz sayi: %d\n", girilen);
 
+        printf("Girdiginiz sayi: %d\n", girilen);
     }
     while (girilen != 0);
+
     printf("Program sonlandi.\n");
 
 
@@ -160,9 +163,7 @@ int main()
                     6. MENÜ YAPISI
     ============================================================
 
-    do-while menülerde sýk kullanýlýr.
-
-    Kullanýcý 0 seçeneðini seçene kadar menüyü tekrar gösterebiliriz.
+    Kullanýcý 0 seçeneðini seçene kadar menüyü tekrar gösterir.
     */
 
     int secim;
@@ -207,7 +208,7 @@ int main()
                          7. BREAK
     ============================================================
 
-    break do-while döngüsünü tamamen sonlandýrýr.
+    break bulunduðu do-while döngüsünü tamamen sonlandýrýr.
     */
 
     i = 1;
@@ -226,7 +227,6 @@ int main()
 
     printf("\n");
 
-
     /*
     ÇIKTI: 1 2 3 4
 
@@ -239,7 +239,7 @@ int main()
                         8. CONTINUE
     ============================================================
 
-    continue mevcut turu atlayarak sonraki tura geçer.
+    continue mevcut turdaki kalan kodlarý atlar ve sonraki tura geçer.
     */
 
     i = 0;
@@ -252,11 +252,17 @@ int main()
         {
             continue;
         }
+
         printf("%d ", i);
     }
     while (i < 5);
 
-    
-	// ÇIKTI: 1 2 4 5
+    printf("\n");
 
+    /*
+    ÇIKTI: 1 2 4 5
+
+    i = 3 olduðunda continue çalýþýr.
+    printf çalýþtýrýlmaz ve sonraki tura geçilir.
+    */
 }

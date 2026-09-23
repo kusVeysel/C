@@ -1,145 +1,103 @@
 #include <stdio.h>
 
-int main()
+main()
 {
     /*
     ============================================================
                     3 BOYUTLU DÝZÝLER
     ============================================================
 
-    3 boyutlu diziler, verileri 3 farklý boyutta saklamak için kullanýlýr.
+    3 boyutlu diziler verileri 3 farklý boyutta saklar.
 
     Genel yapý: veri_tipi dizi[boyut1][boyut2][boyut3];
 
-    Örneðin: int sayilar[2][3][4];
+    Örnek: int sayilar[2][3][4];
 
     Burada:
-        2 -> birinci boyut
-        3 -> ikinci boyut
-        4 -> üçüncü boyut
+        2 -> katman sayýsý
+        3 -> satýr sayýsý
+        4 -> sütun sayýsý
 
-    Toplam eleman sayýsý: 2 x 3 x 4 = 24
+    Toplam eleman: 2 x 3 x 4 = 24
 
+	1 boyutlu: dizi[sütun]
 
-    2 boyutlu dizide: dizi[satýr][sütun]
+    2 boyutlu: dizi[satýr][sütun]
 
-    3 boyutlu dizide: dizi[katman][satýr][sütun]
-
-    þeklinde düþünebiliriz.
+    3 boyutlu: dizi[katman][satýr][sütun]
     */
 
-
-    /*
-    ============================================================
-                    1. 3 BOYUTLU DÝZÝ TANIMLAMA
-    ============================================================
-    */
-
+    // 1. 3 BOYUTLU DÝZÝ TANIMLAMA
     int sayilar[2][3][4];
 
-	// Bu diziyi þöyle düþünebiliriz: 2 tane katman var.Her katmanda: 3 satýr, 4 sütun
-    
-
-
     /*
-    ============================================================
-                    2. DEÐERLERLE TANIMLAMA
-    ============================================================
+    sayilar:
+        2 katman
+        Her katmanda 3 satýr
+        Her satýrda 4 sütun
     */
 
+    // 2. DEÐERLERLE TANIMLAMA
     int matris[2][2][3] =
     {
         {
             {1, 2, 3},
             {4, 5, 6}
         },
-
         {
-            {7, 8, 9}, 
+            {7, 8, 9},
             {10, 11, 12}
         }
     };
 
-
     /*
-    Burada:
+    matris[2][2][3]
 
         2 katman
         2 satýr
         3 sütun
 
-    vardýr.
+    Toplam:
+        2 x 2 x 3 = 12 eleman
 
-    Toplam: 2 x 2 x 3 = 12 eleman bulunur.
-    
-    
-    
-    Elemanlar:
-    
-    1.katman
-    -----------------------------------------------------------
-    |           |    1.sütun    |    2.sütun    |    3.sütun
-    -----------------------------------------------------------
-    1.satýr     |       1       |       2       |      3
-    -----------------------------------------------------------
-    2.satýr     |       4       |       5       |      6 
-    -----------------------------------------------------------  
-	  
-    2.katman
-    -----------------------------------------------------------
-    |           |    1.sütun    |    2.sütun    |    3.sütun
-    -----------------------------------------------------------
-    1.satýr     |       7       |       9       |      9
-    -----------------------------------------------------------
-    2.satýr     |       10       |       11       |      12 
-    -----------------------------------------------------------
-    
-    
+    1. katman:
+        1  2  3
+        4  5  6
+
+    2. katman:
+        7  8  9
+        10 11 12
     */
 
-
-    /*
-    ============================================================
-                    3. ELEMANLARA ERÝÞME
-    ============================================================
-
-    3 boyutlu dizilerde 3 index kullanýlýr: dizi[katman][satýr][sütun]
-    */
-
-
+    // 3. ELEMANLARA ERÝÞME
     printf("matris[0][0][0] = %d\n", matris[0][0][0]);
     printf("matris[0][1][2] = %d\n", matris[0][1][2]);
-
     printf("matris[1][0][0] = %d\n", matris[1][0][0]);
     printf("matris[1][1][2] = %d\n", matris[1][1][2]);
 
-
     /*
-    Örneðin: matris[1][1][2] demek:
-        2. katman
-        2. satýr
-        3. sütun
-    demektir.
+    matris[1][1][2]:
 
-    Deðeri: 12
+        1 -> 2. katman
+        1 -> 2. satýr
+        2 -> 3. sütun
+
+    Sonuç: 12
     */
 
-
+    // 4. TÜM ELEMANLARI YAZDIRMA
     /*
-    ============================================================
-                    4. TÜM ELEMANLARI YAZDIRMA
-    ============================================================
+    3 boyutlu diziyi dolaþmak için 3 tane iç içe for döngüsü kullanýlýr.
 
-    3 boyutlu dizinin tamamýný dolaþmak için 3 tane iç içe döngü kullanýlýr.
-
-        1. döngü -> Katman
-        2. döngü -> Satýr
-        3. döngü -> Sütun
+    1. for -> katman
+    2. for -> satýr
+    3. for -> sütun
     */
+
+    int i, j, k;
 
     printf("\nTum elemanlar:\n");
 
-	int i,j,k;
     for (i = 0; i < 2; i++)
     {
         printf("\n--- Katman %d ---\n", i);
@@ -155,16 +113,10 @@ int main()
         }
     }
 
-
+    // 5. KULLANICIDAN DEÐER ALMA
     /*
-    ============================================================
-                    5. KULLANICIDAN DEÐER ALMA
-    ============================================================
-
-    3 boyutlu dizinin elemanlarýný scanf() ile
-    kullanýcýdan alabiliriz.
-
-    Burada yine 3 tane iç içe döngü kullanýyoruz.
+    2 x 2 x 2 = 8 eleman vardýr.
+    3 iç içe döngü ile bütün elemanlarý dolduruyoruz.
     */
 
     int sayilar3[2][2][2];
@@ -178,19 +130,12 @@ int main()
             for (k = 0; k < 2; k++)
             {
                 printf("[%d][%d][%d]: ", i, j, k);
-
                 scanf("%d", &sayilar3[i][j][k]);
             }
         }
     }
 
-
-    /*
-    ============================================================
-                    6. GÝRÝLEN DEÐERLERÝ YAZDIRMA
-    ============================================================
-    */
-
+    // 6. GÝRÝLEN DEÐERLERÝ YAZDIRMA
     printf("\nGirdiginiz degerler:\n");
 
     for (i = 0; i < 2; i++)
@@ -208,13 +153,7 @@ int main()
         }
     }
 
-
-    /*
-    ============================================================
-                    7. 3 BOYUTLU DÝZÝDE TOPLAMA
-    ============================================================
-    */
-
+    // 7. 3 BOYUTLU DÝZÝDE TOPLAMA
     int toplam = 0;
 
     int sayilar4[2][2][2] =
@@ -223,15 +162,13 @@ int main()
             {1, 2},
             {3, 4}
         },
-
         {
             {5, 6},
             {7, 8}
         }
     };
 
-
-    // Dizideki bütün elemanlarý dolaþýyoruz.
+    // Bütün katman, satýr ve sütunlarý dolaþýyoruz.
     for (i = 0; i < 2; i++)
     {
         for (j = 0; j < 2; j++)
@@ -242,24 +179,14 @@ int main()
             }
         }
     }
+
     printf("\nToplam: %d\n", toplam);
 
+    
+	// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36
+    
 
-    /*
-    Hesaplama:
-
-        1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36
-    */
-
-
-    /*
-    ============================================================
-                    8. sizeof ÝLE ELEMAN SAYISI
-    ============================================================
-
-    3 boyutlu dizinin toplam eleman sayýsýný:  sizeof(dizi) / sizeof(dizi[0][0][0]) þeklinde bulabiliriz.
-    */
-
+    // 8. sizeof ÝLE TOPLAM ELEMAN SAYISINI BULMA
     int veri[2][3][4];
 
     int elemanSayisi =
@@ -267,51 +194,56 @@ int main()
 
     printf("Toplam eleman sayisi: %d\n", elemanSayisi);
 
-
     /*
-    Sonuç: 2 x 3 x 4 = 24
-        Toplam eleman sayisi: 24
-    */
+    2 x 3 x 4 = 24
 
+    sizeof(veri) -> dizinin tamamýnýn bellekte kapladýðý alan.
+
+    sizeof(veri[0][0][0]) -> tek bir elemanýn kapladýðý alan.
+
+    Bölerek: toplam eleman sayýsýný buluyoruz.
+    */
 
     /*
     ============================================================
                          ÖZET
     ============================================================
 
-    1 boyutlu: int dizi[5];
+    1 BOYUTLU:
+        int dizi[5];
+
         dizi[index]
 
 
-    2 boyutlu: int dizi[3][4];
+    2 BOYUTLU:
+        int dizi[3][4];
+
         dizi[satýr][sütun]
 
 
-    3 boyutlu: int dizi[2][3][4];
+    3 BOYUTLU:
+        int dizi[2][3][4];
+
         dizi[katman][satýr][sütun]
 
 
-    3 boyutlu dizilerde genellikle:
+    3 boyutlu dizide:
 
         for -> katman
             for -> satýr
                 for -> sütun
 
-    þeklinde 3 iç içe döngü kullanýlýr.
-
-
     Örnek:
 
-        for (int i = 0; i < 2; i++)
+        for (i = 0; i < 2; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (j = 0; j < 3; j++)
             {
-                for (int k = 0; k < 4; k++)
+                for (k = 0; k < 4; k++)
                 {
                     printf("%d", dizi[i][j][k]);
                 }
             }
         }
     */
-
 }

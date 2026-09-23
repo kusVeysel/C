@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-int main()
+main()
 {
     /*
     ============================================================
                     2 BOYUTLU DÝZÝLER
     ============================================================
 
-    2 boyutlu diziler, verileri satýr ve sütun þeklinde saklamak için kullanýlýr.
+    2 boyutlu diziler verileri SATIR ve SÜTUN þeklinde saklar.
 
     Örneðin:
 
@@ -15,17 +15,16 @@ int main()
         4  5  6
         7  8  9
 
-    Burada: 3 satýr, 3 sütun vardýr.
+    Burada:
+        3 satýr
+        3 sütun
+        9 eleman vardýr.
 
-    Tanýmlama: veri_tipi dizi[satýr][sütun];
+    Genel yapý: veri_tipi dizi[satýr][sütun];
 
-    Örnek: int sayilar[3][3];
-
-    Bu dizi: 3 satýr, 3 sütun, toplam 9 eleman içerir.
+    Örneðin: int sayilar[3][3];
     */
 
-
-    // 3 satýr ve 3 sütundan oluþan 2 boyutlu dizi
     int sayilar[3][3] =
     {
         {1, 2, 3},
@@ -39,9 +38,9 @@ int main()
                         ELEMANLARA ERÝÞME
     ============================================================
 
-    2 boyutlu dizilerde iki index kullanýlýr: dizi[satýr][sütun]
+    2 boyutlu dizilerde iki indeks kullanýlýr: dizi[satýr][sütun]
 
-    Indexler 0'dan baþlar.
+    Ýndeksler 0'dan baþlar.
 
         sayilar[0][0] -> 1
         sayilar[0][1] -> 2
@@ -66,15 +65,16 @@ int main()
                     TÜM ELEMANLARI YAZDIRMA
     ============================================================
 
-    2 boyutlu dizilerde genellikle iç içe for döngüsü kullanýlýr.
+    2 boyutlu dizilerde genellikle iç içe for kullanýlýr.
 
-    Dýþ döngü  -> Satýrlarý gezer
-    Ýç döngü   -> Sütunlarý gezer
+    Dýþ for -> Satýrlarý gezer.
+    Ýç for  -> Sütunlarý gezer.
     */
+
+    int i, j;
 
     printf("\nDizi:\n");
 
-	int i,j;
     for (i = 0; i < 3; i++)
     {
         for (j = 0; j < 3; j++)
@@ -82,7 +82,8 @@ int main()
             printf("%d ", sayilar[i][j]);
         }
 
-        printf("\n"); // Bir satýr bittikten sonra alt satýra geç.
+        // Bir satýr bittikten sonra alt satýra geç.
+        printf("\n");
     }
 
 
@@ -91,7 +92,13 @@ int main()
                     ELEMAN DEÐÝÞTÝRME
     ============================================================
 
-    Belirli bir elemana index kullanarak yeni deðer verebiliriz.
+    Ýndeks kullanarak belirli bir elemana yeni deðer verebiliriz.
+
+    sayilar[1][2]:
+
+        1 -> 2. satýr
+        2 -> 3. sütun
+
     */
 
     sayilar[1][2] = 100;
@@ -104,7 +111,7 @@ int main()
                     KULLANICIDAN VERÝ ALMA
     ============================================================
 
-    2 boyutlu dizinin bütün elemanlarýný scanf ile doldurabiliriz.
+    Ýç içe for kullanarak matrisin bütün elemanlarýný kullanýcýdan alabiliriz.
     */
 
     int matris[2][3];
@@ -135,27 +142,37 @@ int main()
         {
             printf("%d ", matris[i][j]);
         }
+
         printf("\n");
     }
 
 
     /*
     ============================================================
-                        ÖZET
+                         ÖZET
     ============================================================
 
-    1 boyutlu dizi: int dizi[5];
+    1 boyutlu dizi:
+
+        int dizi[5];
+
         dizi[index]
 
-    2 boyutlu dizi: int dizi[3][4];
+
+    2 boyutlu dizi:
+
+        int dizi[3][4];
+
         dizi[satýr][sütun]
 
 
-    2 boyutlu dizilerde:
+    2 boyutlu dizilerde genellikle:
+
         i -> satýr
         j -> sütun
 
-    Bu yüzden genellikle:
+
+    Bu yüzden:
 
         for (i = 0; i < satýr; i++)
         {
