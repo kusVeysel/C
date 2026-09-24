@@ -61,14 +61,9 @@ main()
                     2. WHILE ÝLE FARKI
     ============================================================
 
-    while:
-        Önce koþulu kontrol eder.
-        FALSE ise hiç çalýþmayabilir.
+    while: Önce koþulu kontrol eder. FALSE ise hiç çalýþmayabilir.
 
-    do-while:
-        Önce kodu çalýþtýrýr.
-        Sonra koþulu kontrol eder.
-        Bu nedenle en az 1 kez çalýþýr.
+    do-while: Önce kodu çalýþtýrýr. Sonra koþulu kontrol eder. Bu nedenle en az 1 kez çalýþýr.
     */
 
     int sayi = 10;
@@ -78,8 +73,6 @@ main()
         printf("while calisti\n");
     }
 
-    sayi = 10;
-
     do
     {
         printf("do-while calisti\n");
@@ -87,9 +80,7 @@ main()
     while (sayi < 5);
 
     /*
-    ÇIKTI:
-
-    do-while calisti
+    ÇIKTI: do-while calisti
 
     Çünkü:
 

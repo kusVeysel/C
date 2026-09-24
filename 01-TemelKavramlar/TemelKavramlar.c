@@ -1,5 +1,6 @@
 #include <stdio.h>   // temel girdi (input) ve çýktý (output) iþlemlerini yapabilmek için kullanýlan standart kütüphanedir.
-#include <stdbool.h> // bool, true ve false için.
+#include <stdbool.h> // bool, true ve false için gerekli kütüphanedir.
+// #include <kütüphane_adý> ile kütüphaneler dahil edilir.
 
 main()
 {
@@ -14,13 +15,12 @@ main()
     double -> Daha yüksek hassasiyetli ondalýklý sayýlar
     char   -> Tek karakter
     bool   -> true veya false
+	
+	'A' -> Tek karakter (char)
+    "A" -> Karakter dizisi (string)
 
     Deðiþken tanýmlama: veri_tipi deðiþken_adý = deðer;
-
     Örnek: int yas = 20;
-
-    'A' -> Tek karakter (char)
-    "A" -> Karakter dizisi (string)
     */
 
     int ogrenciNo = 101;
@@ -34,14 +34,10 @@ main()
     2. DEÐÝÞKENÝN DEÐERÝNÝ DEÐÝÞTÝRME
     ============================================================
     Deðiþkenlerin deðerleri sonradan deðiþtirilebilir.
-
-        ogrenciNo = 11;
-
-    "=" burada atama operatörüdür:
-    "11 deðerini ogrenciNo deðiþkenine ata."
     */
-
-    ogrenciNo = 11;
+    
+    ogrenciNo = 11; // ogrenciNo içinde 101 yerine artýk 11 var.
+    // "=" burada atama operatörüdür: "11 deðerini ogrenciNo deðiþkenine ata."
 
     /*
     ============================================================

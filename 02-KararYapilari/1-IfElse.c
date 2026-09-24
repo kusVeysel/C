@@ -97,6 +97,8 @@ main()
     {
         printf("Basarisiz\n");
     }
+    // if doðru deðilse 1.else if kontrol edilir,o da doðru deðilse 2.if else kontrol edilir, o da doðru deðilse 3.else if kontrol edilir... 
+	// hiçbiri doðru deðilse else kontrol edilir, o da true dönmezse hiçbiri çalýþmaz.
 
     /*
     ============================================================
@@ -125,6 +127,8 @@ main()
     {
         printf("Sayi 20'den kucuk\n");
     }
+    
+    // Bunlar farklý yapýlardýr birinin doðru ya da yanlýþ olmasý diðerlerini etkilemez. Hepsi çalýþýr(kontrol edilir).
 
     /*
     ============================================================

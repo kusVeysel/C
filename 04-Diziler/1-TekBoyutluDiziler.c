@@ -10,13 +10,11 @@ main()
     Dizi (array), ayný veri tipindeki birden fazla deðeri tek bir deðiþken adý altýnda saklamamýzý saðlar.
 
     Örneðin:
-
         int ogrenci1 = 101;
         int ogrenci2 = 102;
         int ogrenci3 = 103;
 
-    yerine: int ogrenciNo[3] = {101, 102, 103};
-    	kullanabiliriz.
+    yerine: int ogrenciNo[3] = {101, 102, 103}; kullanabiliriz.
 
     C'de dizilerin indeksleri 0'dan baþlar.
     */

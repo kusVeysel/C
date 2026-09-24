@@ -17,17 +17,16 @@ main()
         }
 
     Örneðin:
-
-        for (int i = 0; i < 5; i++)
+		int i;
+        for (i = 0; i < 5; i++)
 
     Burada:
 
-        int i = 0 -> Baþlangýç deðeri
-        i < 5     -> Döngünün devam etme þartý
-        i++       -> Her tur sonunda i'yi 1 artýrýr
+        i = 0 -> Baþlangýç deðeri
+        i < 5 -> Döngünün devam etme þartý
+        i++   -> Her tur sonunda i'yi 1 artýrýr. i += 1 veya i = i + 1 ile ayný iþlevdedir. 
 
     Çalýþma sýrasý:
-
         1. Baþlangýç
         2. Koþul kontrolü
         3. Döngü gövdesi
@@ -67,6 +66,7 @@ main()
     }
     printf("\n");
 
+
     // 10'dan 1'e doðru geri sayar.
     // i-- -> i deðerini 1 azaltýr. i -= 1 veya i = i - 1 ile ayný iþlevdedir. 
     for (i = 10; i >= 1; i--)
@@ -75,6 +75,7 @@ main()
     }
     printf("\n");
 
+
     // 2'þer 2'þer artýrýr.
     // i += 2 -> i deðerine her turda 2 ekler.
     for (i = 0; i <= 10; i += 2)
@@ -82,6 +83,7 @@ main()
         printf("%d ", i);
     }
     printf("\n");
+
 
     /*
     ============================================================
@@ -153,7 +155,7 @@ main()
 
     for (i = 1; i <= 10; i++)
     {
-        if (i == 5)
+        if (i == 4)
         {
             break;
         }
@@ -164,9 +166,9 @@ main()
     printf("\n");
 
     /*
-    ÇIKTI: 1 2 3 4
+    ÇIKTI: 1 2 3 
 
-    i = 5 olduðunda break çalýþýr ve döngü tamamen sona erer.
+    i = 4 olduðunda break çalýþýr ve döngü tamamen sona erer.
     */
 
 

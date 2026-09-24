@@ -63,7 +63,9 @@ main()
     'A', 'B', 'C' gibi karakterler tek týrnak içinde yazýlýr.
     */
 
-    char harfNotu = 'B';
+    char harfNotu;
+    printf("Büyük harfle harf notu giriniz: ");
+	scanf("%c",&harfNotu);
 
     switch (harfNotu)
     {

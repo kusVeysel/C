@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h> // toupper & tolower için
+#include <ctype.h> // toupper & tolower için gerekli kütüphanedir.
 
 main()
 {

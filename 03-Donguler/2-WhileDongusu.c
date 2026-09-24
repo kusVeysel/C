@@ -226,9 +226,7 @@ main()
     printf("\n");
 
     /*
-    ÇIKTI:
-
-    1 2 4 5
+    ÇIKTI: 1 2 4 5
 
     i = 3 olduðunda continue çalýþýr.
 
