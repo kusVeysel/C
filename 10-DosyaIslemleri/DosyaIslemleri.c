@@ -36,20 +36,17 @@ int main() {
         ==================== FPUTC ====================
 
         fputc(): Dosyaya TEK BÝR KARAKTER yazar.
-
-        Dosyanýn içeriði ABCDEF
     */
+    // Dosyanýn içeriði ABCDEF
     fputc('F', dosya);
 
     /*
         ==================== FPUTS ====================
 
         fputs(): Dosyaya bir STRING yazar.
-
-        Burada dosyanýn sonuna: "GHI" eklenir.
-
-        Dosya: ABCDEFGHI
     */
+	// Burada dosyanýn sonuna: "GHI" eklenir.ö
+	// Dosya: ABCDEFGHI
     fputs("GHI", dosya);
 
     /*
@@ -147,11 +144,9 @@ int main() {
 
         fscanf(): Dosyadan biçimli veri okur.
 
-        Örneðin dosyada:
-            25 Veysel
+        Örneðin dosyada: 25 Veysel
 
         varsa:
-
             int yas;
             char isim[20];
 
@@ -161,6 +156,10 @@ int main() {
 
         Bu örnekte dosyamýz string aðýrlýklý olduðu için ayrýca kullanýlmasýna gerek yoktur.
     */
+    
+    char harfler[10];
+	fscanf(dosya,"%s",harfler);
+	printf("fscanf ile cekilen veri => %s",harfler);
 
     /*
         ==================== DOSYA KONUM FONKSÝYONLARI ====================
