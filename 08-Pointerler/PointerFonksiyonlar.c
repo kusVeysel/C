@@ -20,9 +20,7 @@
         ptr    -> sayi'nin adresini tutar
         *ptr   -> 10
 
-    Pointerlarýn fonksiyonlarda en önemli kullaným amacý,
-    fonksiyonun dýþarýdaki gerçek deðiþkenin deðerini
-    deðiþtirebilmesini saðlamaktýr.
+    Pointerlarýn fonksiyonlarda en önemli kullaným amacý, fonksiyonun dýþarýdaki gerçek deðiþkenin deðerini deðiþtirebilmesini saðlamaktýr.
 */
 
 
@@ -44,13 +42,9 @@ void normalDegistir(int sayi) {
 void pointerIleDegistir(int *sayi) {
 
     /*
-        int *sayi:
+        int *sayi: Fonksiyon bir int deðiþkeninin adresini alýyor.
 
-        Fonksiyon bir int deðiþkeninin adresini alýyor.
-
-        *sayi:
-
-        Gelen adresteki gerçek deðere ulaþýr.
+        *sayi: Gelen adresteki gerçek deðere ulaþýr.
     */
 
     *sayi = 100;
@@ -92,14 +86,11 @@ void bilgilerDegistir(int *yas, float *boy, char *harf) {
     /*
         Fonksiyon üç farklý deðiþkenin adresini alýyor.
 
-        int *yas
-        -> int deðiþkeninin adresini tutar.
+        int *yas -> int deðiþkeninin adresini tutar.
 
-        float *boy
-        -> float deðiþkeninin adresini tutar.
+        float *boy -> float deðiþkeninin adresini tutar.
 
-        char *harf
-        -> char deðiþkeninin adresini tutar.
+        char *harf -> char deðiþkeninin adresini tutar.
     */
 
     *yas = 25;
@@ -115,11 +106,9 @@ void bilgilerDegistir(int *yas, float *boy, char *harf) {
 void hesapla(int a, int b, int *toplam, int *carpim) {
 
     /*
-        Normalde bir fonksiyon return ile tek bir deðer
-        döndürebilir.
+        Normalde bir fonksiyon return ile tek bir deðer döndürebilir.
 
-        Pointer kullanarak birden fazla deðiþkene
-        sonuç yazabiliriz.
+        Pointer kullanarak birden fazla deðiþkene sonuç yazabiliriz.
 
         *toplam -> toplam deðiþkeninin kendisi
         *carpim -> carpim deðiþkeninin kendisi
@@ -149,8 +138,7 @@ int main() {
     /*
         Burada sayi1'in sadece deðeri gönderildi.
 
-        Fonksiyon içerisinde oluþturulan sayi,
-        main'deki sayi1'in kopyasýdýr.
+        Fonksiyon içerisinde oluþturulan sayi, main'deki sayi1'in kopyasýdýr.
 
         Bu nedenle sayi1 deðiþmez.
     */
@@ -167,22 +155,16 @@ int main() {
     printf("Pointer fonksiyonundan once: %d\n", sayi2);
 
     /*
-        &sayi2:
-
-        sayi2 deðiþkeninin bellekteki adresini gönderiyoruz.
+        &sayi2: sayi2 deðiþkeninin bellekteki adresini gönderiyoruz.
     */
 
     pointerIleDegistir(&sayi2);
 
     /*
-        Fonksiyon adresi aldýðý için,
-        gerçek sayi2 deðiþkenine ulaþabiliyor.
+        Fonksiyon adresi aldýðý için, gerçek sayi2 deðiþkenine ulaþabiliyor.
 
-        Fonksiyon içerisinde:
-
-        *sayi = 100;
-
-        yapýldýðýnda sayi2'nin gerçek deðeri deðiþiyor.
+        Fonksiyon içerisinde: *sayi = 100;
+	 		yapýldýðýnda sayi2'nin gerçek deðeri deðiþiyor.
     */
 
     printf("Pointer fonksiyonundan sonra: %d\n\n", sayi2);
@@ -217,13 +199,9 @@ int main() {
 
     /*
         *ptr = 75;
+        	demek: "ptr'nin gösterdiði adresteki deðeri 75 yap."
 
-        demek:
-
-        "ptr'nin gösterdiði adresteki deðeri 75 yap."
-
-        ptr -> sayi3'ün adresini tuttuðu için
-        sayi3'ün gerçek deðeri deðiþir.
+        ptr -> sayi3'ün adresini tuttuðu için sayi3'ün gerçek deðeri deðiþir.
     */
 
     printf("Pointer ile degistirilen sayi: %d\n\n", sayi3);
@@ -244,8 +222,7 @@ int main() {
         &a -> a'nýn adresi
         &b -> b'nin adresi
 
-        Fonksiyona deðer deðil,
-        deðiþkenlerin adresleri gönderiliyor.
+        Fonksiyona deðer deðil, deðiþkenlerin adresleri gönderiliyor.
     */
 
     yerDegistir(&a, &b);
@@ -288,8 +265,7 @@ int main() {
     int carpim;
 
     /*
-        toplam ve carpim deðiþkenlerinin henüz
-        bir deðeri yok.
+        toplam ve carpim deðiþkenlerinin henüz bir deðeri yok.
 
         Fonksiyona adreslerini gönderiyoruz.
     */
@@ -302,8 +278,7 @@ int main() {
         *toplam = a + b;
         *carpim = a * b;
 
-        iþlemleri yapýldýðý için
-        main içerisindeki deðiþkenlere sonuç yazýlýr.
+        iþlemleri yapýldýðý için main içerisindeki deðiþkenlere sonuç yazýlýr.
     */
 
     printf("Toplam: %d\n", toplam);
@@ -321,12 +296,9 @@ int main() {
     /*
         scanf de adres ister.
 
-        &kullaniciYasi:
+        &kullaniciYasi: kullaniciYasi deðiþkeninin adresini scanf'e gönderiyoruz.
 
-        kullaniciYasi deðiþkeninin adresini scanf'e gönderiyoruz.
-
-        scanf bu adresi kullanarak kullanýcýnýn girdiði
-        deðeri doðrudan kullaniciYasi deðiþkenine yazar.
+        scanf bu adresi kullanarak kullanýcýnýn girdiði deðeri doðrudan kullaniciYasi deðiþkenine yazar.
     */
 
     scanf("%d", &kullaniciYasi);
@@ -344,52 +316,41 @@ int main() {
         int *ptr = &sayi;
 
 
-        sayi
-        -> Deðeri tutar.
+        sayi -> Deðeri tutar.
 
-        &sayi
-        -> sayi'nin adresini verir.
+        &sayi -> sayi'nin adresini verir.
 
-        ptr
-        -> sayi'nin adresini tutar.
+        ptr -> sayi'nin adresini tutar.
 
-        *ptr
-        -> ptr'nin gösterdiði adresteki gerçek deðere ulaþýr.
+        *ptr -> ptr'nin gösterdiði adresteki gerçek deðere ulaþýr.
 
 
         FONKSÝYONDA:
+	        void degistir(int *ptr)
+	        {
+	            *ptr = 100;
+	        }
 
-        void degistir(int *ptr)
-        {
-            *ptr = 100;
-        }
-
-        Çaðýrýrken:
-
-        degistir(&sayi);
-
+        Çaðýrýrken: degistir(&sayi);
 
         Yani:
-
-        &  -> ADRESÝ AL
-        *  -> ADRESTEKÝ DEÐERE ULAÞ
+	        &  -> ADRESÝ AL
+	        *  -> ADRESTEKÝ DEÐERE ULAÞ
 
 
         Genel yapý:
-
-        Deðiþken:
-            int sayi = 10;
-
-        Pointer:
-            int *ptr = &sayi;
-
-        Fonksiyona adres gönderme:
-            degistir(&sayi);
-
-        Fonksiyon içerisinde gerçek deðere ulaþma:
-            *ptr
+	        Deðiþken:
+	            int sayi = 10;
+	
+	        Pointer:
+	            int *ptr = &sayi;
+	
+	        Fonksiyona adres gönderme:
+	            degistir(&sayi);
+	
+	        Fonksiyon içerisinde gerçek deðere ulaþma:
+	            *ptr
     */
 
-
-    return 0;
 }
+

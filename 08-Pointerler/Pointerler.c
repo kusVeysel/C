@@ -16,9 +16,9 @@ int main() {
         Pointer ise bir deðiþkenin DEÐERÝNÝ deðil, BELLEK ADRESÝNÝ tutar.
 
         Yani:
-        sayi    -> 10
-        &sayi   -> sayi deðiþkeninin bellek adresi
-        *pointer -> o adresteki deðer
+	        sayi    -> 10
+	        &sayi   -> sayi deðiþkeninin bellek adresi
+	        *pointer -> o adresteki deðer
     */
 
 
@@ -66,10 +66,9 @@ int main() {
         ptr = &sayi;
 
         Burada:
-        
-        sayi -> 10
-        &sayi -> sayi'nin adresi
-        ptr -> sayi'nin adresini tutuyor
+	        sayi -> 10
+	        &sayi -> sayi'nin adresi
+	        ptr -> sayi'nin adresini tutuyor
     */
 
     ptr = &sayi;
@@ -88,11 +87,9 @@ int main() {
         *ptr -> o adresteki deðer
 
         Örneðin:
-
-        sayi = 10
-        ptr = &sayi
-
-        *ptr -> 10
+	        sayi = 10
+	        ptr = &sayi
+	        *ptr -> 10
     */
 
     printf("Pointer ile deger: %d\n", *ptr);
@@ -103,13 +100,10 @@ int main() {
     // ============================================================
     
     /*
-        Pointer'ýn en önemli özelliklerinden biri:
-
-        Pointer üzerinden asýl deðiþkenin deðerini deðiþtirebiliriz.
+        Pointer'ýn en önemli özelliklerinden biri: Pointer üzerinden asýl deðiþkenin deðerini deðiþtirebiliriz.
 
         *ptr = 50;
-
-        dediðimizde sayi deðiþkeninin deðeri de deðiþir.
+			dediðimizde sayi deðiþkeninin deðeri de deðiþir.
     */
 
     *ptr = 50;
@@ -269,3 +263,4 @@ int main() {
     */
 
 }
+
