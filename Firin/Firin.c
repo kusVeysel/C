@@ -3,7 +3,7 @@
 int main() {
     int ay, un_ton, calisan_sayisi, elektrik_faturasi, su_faturasi, kira_faturasi, toplam_kazanc = 0;
 
-    for (ay = 1; ay <= 3; ay++) {
+    for (ay = 1; ay <= 12; ay++) {
 
         // --- GÝRDÝLER ---
         printf("--- %d. AY BILGILERI ---\n", ay);

@@ -2,7 +2,7 @@
 #include <stdlib.h> // malloc, calloc, realloc, free için gerekli.
 
 int main() {
-    int n, *p1, *p2, *p3;
+    int i, n, *p1, *p2, *p3;
 
     // Kullanýcýdan kaç adet int alaný istediðimizi alýyoruz.
     printf("Adet giriniz: ");
@@ -22,7 +22,7 @@ int main() {
     */
     p1 = (int*)malloc(n * sizeof(int));
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
         printf("malloc %d => %d\n", i + 1, p1[i]);
 
     /*
@@ -38,7 +38,7 @@ int main() {
     */
     p2 = (int*)calloc(n, sizeof(int));
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
         printf("calloc %d => %d\n", i + 1, p2[i]);
 
     /*
@@ -51,7 +51,7 @@ int main() {
 
     // Ayrýlan 3 alana kullanýcýdan deðer alýyoruz.
     printf("3 adet sayi giriniz: ");
-    for (int i = 0; i < 3; i++) {
+    for (i = 0; i < 3; i++) {
     	scanf("%d", &p3[i]);
 	}
         
@@ -80,11 +80,11 @@ int main() {
     printf("2 adet daha sayi giriniz: ");
 
     // Yeni açýlan 2 alana deðer giriyoruz.
-    for (int i = 3; i < 5; i++)
+    for (i = 3; i < 5; i++)
         scanf("%d", &p3[i]);
 
     // 5 elemanýn tamamýný ekrana yazdýrýyoruz.
-    for (int i = 0; i < 5; i++)
+    for (i = 0; i < 5; i++)
         printf("yukseltme sonrasi pointer elemanlar => %d\n", p3[i]);
 
     /*
@@ -99,7 +99,7 @@ int main() {
 
     p3 = (int*)realloc(p3, 2 * sizeof(int));
 
-    for (int i = 0; i < 2; i++)
+    for (i = 0; i < 2; i++)
         printf("azaltma sonrasi pointer elemanlar => %d\n", p3[i]);
 
     /*

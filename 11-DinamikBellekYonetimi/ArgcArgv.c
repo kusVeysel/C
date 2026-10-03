@@ -11,14 +11,14 @@ int main(int argc, char *argv[]) { // argv: parametre olarak girilen string deðe
 
     int eleman_sayisi = argc - 1; // Program adý (argv[0]) hariç parametre sayýsý
     int dizi[eleman_sayisi];
-    int toplam = 0;
+    int i, toplam = 0;
     
-    for (int i = 1; i < argc; i++) {
+    for (i = 1; i < argc; i++) {
         printf("%d. argv = %s\n", i, argv[i]);
         dizi[i - 1] = atoi(argv[i]); // String ifadeleri integer deðere çevirip diziye atar
     }
     
-    for (int i = 0; i < eleman_sayisi; i++) {
+    for (i = 0; i < eleman_sayisi; i++) {
         printf("%d. argv ama int = %d\n", i + 1, dizi[i]);
         toplam += dizi[i]; // Ekrana bastýrýrken ayný döngüde toplam hesabý yapýlýr
     }

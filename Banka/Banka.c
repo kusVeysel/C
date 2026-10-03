@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
-int password = 123;
+int password = 1234;
 
 int cikis(int sonuc){
 	printf("Iyi gunler!");
@@ -90,7 +90,7 @@ durum[0](sifre);
 	
 	int bitir = durum[3](sonuc);
 	if(bitir == 1){
-		cikis[4](sonuc);	
+		durum[4](sonuc);	
 	}
 	else{
 		while(bitir != 1){
@@ -98,7 +98,7 @@ durum[0](sifre);
 			para = durum[2](para);
 			int bitir = durum[3](sonuc);
 			if(bitir == 1){
-				cikis[4](sonuc);	
+				durum[4](sonuc);	
 			}	
 		}
 	}

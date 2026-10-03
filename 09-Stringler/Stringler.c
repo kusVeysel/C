@@ -4,6 +4,7 @@
 
 main()
 {
+	int i;
     char c1[30] = "veysel";
     char c2[30] = "ahmet";
     char c3[30];
@@ -62,7 +63,7 @@ main()
     */
 
     // Stringi büyük harfe dönüþtürme
-    for (int i = 0; c1[i] != '\0'; i++)
+    for (i = 0; c1[i] != '\0'; i++)
     {
         c1[i] = toupper((unsigned char)c1[i]);
     }
@@ -70,7 +71,7 @@ main()
     printf("Buyuk harf => %s\n", c1);
 
     // Stringi tekrar küçük harfe dönüþtürme
-    for (int i = 0; c1[i] != '\0'; i++)
+    for (i = 0; c1[i] != '\0'; i++)
     {
         c1[i] = tolower((unsigned char)c1[i]);
     }

@@ -14,7 +14,7 @@ main() {
     int yillikToplamNet = 0;
     int ay;
 
-    for (ay = 1; ay <= 2; ay++) {
+    for (ay = 1; ay <= 12; ay++) {
     	
         // --- BÝLÝM KÝTABI ALIMI ---
         printf("%d. ay alinacak bilim kitabi sayisini giriniz: ", ay);
